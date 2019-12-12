@@ -1,6 +1,13 @@
 <template>
 <client-only>
-    <div class="tk-home">
+  <div>
+    <div @click="isShow = !isShow" id="container" v-if="isShow">
+         <h1>CLICK!</h1>
+         <h1>CLICK!</h1>
+         <h1>CLICK!</h1>
+      </div>
+    <div v-else class="tk-home">
+      
       <div class="container">
       <!-- <h1 class="tk-home__title">Thirawit Kaeophirom</h1> -->
       <vue-typer
@@ -53,7 +60,7 @@
               <section id="home-1">
              <h3 >About me</h3>
              <div class="tk-home__story">
-               Hello, I'm Teerawit. I love being creative and challenge, I am searching a job that enhance my skill and experience everyday in term of Web developer , UI / UX designer, Graphic designer and duty in Software development. I like to challenge and i am seeking that feeling. 
+               Hello, I'm Thirawit. I love being creative and challenge, I am searching a job that enhance my skill and experience everyday in term of Web developer , UI / UX designer, Graphic designer and duty in Software development. I like to challenge and i am seeking that feeling. 
              </div>
               </section>
              <h3 id="home-2">Work</h3>
@@ -99,6 +106,7 @@
       </div>
     </div>
   </div>
+  </div>
   </client-only>
 </template>
 
@@ -113,6 +121,7 @@ export default {
   },
   data() {
     return {
+      isShow: true,
       skill: [
         {
           tool: 'ReactJs',
@@ -266,6 +275,9 @@ export default {
 @include block('home'){
   padding: 16px;
   background-color: $--color-grey-4;
+  @include modifier(glitch){
+   background-color: #333;
+  }
   @include media-breakpoint-up(lg){
         height: 100vh;
         align-items: center;
@@ -371,4 +383,210 @@ export default {
     overflow-y: scroll;
   }
 }
+ </style>
+ <style lang="scss" >
+ #container {
+    width: 100vw;
+    height: 100vw;
+    margin: 30vw auto;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  
+  @include media-breakpoint-up(md){
+  width: 70vw;
+  height: auto;
+  }
+}
+
+h1 {
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  font-size: 5em;
+  letter-spacing: 8px;
+  font-family: 'udomsuk-bold';
+  font-weight: 400;
+  
+  margin: 0;
+  line-height: 0;
+  
+  animation: glitch1 2.5s infinite;
+}
+
+h1:nth-child(2) {
+  color: #67f3da;
+  animation: glitch2 2.5s infinite;
+}
+
+h1:nth-child(3) {
+  color: #f16f6f;
+  animation: glitch3 2.5s infinite;
+}
+
+@keyframes glitch1 {
+  0% {
+    transform: none;
+    opacity: 1;
+  }
+  7% {
+    transform: skew(-0.5deg, -0.9deg);
+    opacity: 0.75;
+  }
+  10% {
+    transform: none;
+    opacity: 1;
+  }
+  27% {
+    transform: none;
+    opacity: 1;
+  }
+  30% {
+    transform: skew(0.8deg, -0.1deg);
+    opacity: 0.75;
+  }
+  35% {
+    transform: none;
+    opacity: 1;
+  }
+  52% {
+    transform: none;
+    opacity: 1;
+  }
+  55% {
+    transform: skew(-1deg, 0.2deg);
+    opacity: 0.75;
+  }
+  50% {
+    transform: none;
+    opacity: 1;
+  }
+  72% {
+    transform: none;
+    opacity: 1;
+  }
+  75% {
+    transform: skew(0.4deg, 1deg);
+    opacity: 0.75;
+  }
+  80% {
+    transform: none;
+    opacity: 1;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes glitch2 {
+  0% {
+    transform: none;
+    opacity: 0.25;
+  }
+  7% {
+    transform: translate(-2px, -3px);
+    opacity: 0.5;
+  }
+  10% {
+    transform: none;
+    opacity: 0.25;
+  }
+  27% {
+    transform: none;
+    opacity: 0.25;
+  }
+  30% {
+    transform: translate(-5px, -2px);
+    opacity: 0.5;
+  }
+  35% {
+    transform: none;
+    opacity: 0.25;
+  }
+  52% {
+    transform: none;
+    opacity: 0.25;
+  }
+  55% {
+    transform: translate(-5px, -1px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: none;
+    opacity: 0.25;
+  }
+  72% {
+    transform: none;
+    opacity: 0.25;
+  }
+  75% {
+    transform: translate(-2px, -6px);
+    opacity: 0.5;
+  }
+  80% {
+    transform: none;
+    opacity: 0.25;
+  }
+  100% {
+    transform: none;
+    opacity: 0.25;
+  }
+}
+
+@keyframes glitch3 {
+  0% {
+    transform: none;
+    opacity: 0.25;
+  }
+  7% {
+    transform: translate(2px, 3px);
+    opacity: 0.5;
+  }
+  10% {
+    transform: none;
+    opacity: 0.25;
+  }
+  27% {
+    transform: none;
+    opacity: 0.25;
+  }
+  30% {
+    transform: translate(5px, 2px);
+    opacity: 0.5;
+  }
+  35% {
+    transform: none;
+    opacity: 0.25;
+  }
+  52% {
+    transform: none;
+    opacity: 0.25;
+  }
+  55% {
+    transform: translate(5px, 1px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: none;
+    opacity: 0.25;
+  }
+  72% {
+    transform: none;
+    opacity: 0.25;
+  }
+  75% {
+    transform: translate(2px, 6px);
+    opacity: 0.5;
+  }
+  80% {
+    transform: none;
+    opacity: 0.25;
+  }
+  100% {
+    transform: none;
+    opacity: 0.25;
+  }
+}
+ 
  </style>

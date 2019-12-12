@@ -103,7 +103,7 @@
 </template>
 
 <script>
-import { Timeline, TimelineItem } from 'element-ui'
+import { Timeline, TimelineItem, Progress } from 'element-ui'
 import SlideShowcase from '~/components/slideShowcase.vue'
 export default {
   components: {
@@ -113,6 +113,28 @@ export default {
   },
   data() {
     return {
+      skill: [
+        {
+          tool: 'ReactJs',
+          point: ''
+        },
+        {
+          tool: 'React Native',
+          point: ''
+        },
+        {
+          tool: 'VueJS (Nuxt)',
+          point: ''
+        },
+        {
+          tool: 'Cypress',
+          point: ''
+        },
+        {
+          tool: 'Cypress',
+          point: ''
+        },
+       ],
       activities: [{
           content: 'Senior Front-end Developer - Tourkrub',
           timestamp: '2019-06-1 - Then'
@@ -246,7 +268,6 @@ export default {
   background-color: $--color-grey-4;
   @include media-breakpoint-up(lg){
         height: 100vh;
-        display: flex;
         align-items: center;
   }
   @include element('title'){

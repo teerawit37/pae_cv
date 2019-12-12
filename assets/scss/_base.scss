@@ -1,0 +1,361 @@
+@import '~normalize-scss/sass/normalize';
+@import '~bootstrap/scss/grid';
+@import '~bootstrap/scss/images';
+@import '~bootstrap/scss/utilities';
+@import '~element-ui/packages/theme-chalk/src/common/transition';
+@import '~animate.css/animate';
+@import 'icons';
+@import 'fonts';
+@import 'toast';
+
+a,
+button {
+  outline: none;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: 'puimake-regular', Arial, sans-serif;
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+  color: $--color-black-2;
+  font-size: $--font-size-base-mobile;
+  @include media-breakpoint-up(lg) {
+    font-size: $--font-size-base-desktop;
+  }
+}
+body {
+  margin: 0;
+  font-size: $--font-size-base;
+}
+a {
+  color: $--color-blue;
+  text-decoration: none;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+p {
+  line-height: 1.9;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.tk-off-canvas-menu-open {
+  overflow: hidden;
+  @include media-breakpoint-up(lg) {
+    overflow: auto;
+  }
+}
+
+.container {
+  @include media-breakpoint-only(sm) {
+    padding: 0 16px;
+  }
+}
+
+.tk-lh-0 {
+  line-height: 0;
+}
+
+.tk-text-indent {
+  text-indent: 8%;
+}
+
+.tk-child-inline-flex > * {
+  display: inline-flex;
+}
+
+%tag-h {
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+  font-weight: normal;
+  line-height: 1.35;
+  color: $--color-black;
+  font-family: 'udomsuk-bold';
+}
+h1 {
+  @extend %tag-h;
+  font-size: $--font-size-h1;
+}
+h2 {
+  @extend %tag-h;
+  font-size: $--font-size-h2;
+}
+h3 {
+  @extend %tag-h;
+  font-size: $--font-size-h3;
+}
+h4 {
+  @extend %tag-h;
+  font-size: $--font-size-h4;
+}
+h5 {
+  @extend %tag-h;
+  font-size: $--font-size-h5;
+}
+h6 {
+  @extend %tag-h;
+  font-size: $--font-size-h6;
+}
+
+/**
+ * Spacing gutter
+ */
+@each $prop, $abbrev in (margin: m, padding: p) {
+  .#{$abbrev}-g {
+    #{$prop}: $grid-gutter-width;
+  }
+  .#{$abbrev}t-g,
+  .#{$abbrev}y-g {
+    #{$prop}-top: $grid-gutter-width;
+  }
+  .#{$abbrev}r-g,
+  .#{$abbrev}x-g {
+    #{$prop}-right: $grid-gutter-width;
+  }
+  .#{$abbrev}b-g,
+  .#{$abbrev}y-g {
+    #{$prop}-bottom: $grid-gutter-width;
+  }
+  .#{$abbrev}l-g,
+  .#{$abbrev}x-g {
+    #{$prop}-left: $grid-gutter-width;
+  }
+}
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    @each $gutter in $--grid-gutters {
+      .tk-gutter#{$infix}-#{$gutter} {
+        padding-right: #{$gutter}px;
+        padding-left: #{$gutter}px;
+        .row {
+          margin-left: #{$gutter * -1}px;
+          margin-right: #{$gutter * -1}px;
+          [class*='col-'] {
+            padding-left: #{$gutter}px;
+            padding-right: #{$gutter}px;
+          }
+        }
+        @each $selector in ('&', '& .row', "& .row [class*='col-']") {
+          @each $prop, $abbrev in (margin: m, padding: p) {
+            #{$selector}.#{$abbrev}-g {
+              #{$prop}: #{$gutter}px;
+            }
+            #{$selector}.#{$abbrev}t-g,
+            #{$selector}.#{$abbrev}y-g {
+              #{$prop}-top: #{$gutter}px;
+            }
+            #{$selector}.#{$abbrev}r-g,
+            #{$selector}.#{$abbrev}x-g {
+              #{$prop}-right: #{$gutter}px;
+            }
+            #{$selector}.#{$abbrev}b-g,
+            #{$selector}.#{$abbrev}y-g {
+              #{$prop}-bottom: #{$gutter}px;
+            }
+            #{$selector}.#{$abbrev}l-g,
+            #{$selector}.#{$abbrev}x-g {
+              #{$prop}-left: #{$gutter}px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Spacing fix
+ */
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    @each $prop, $abbrev in (margin: m, padding: p) {
+      @each $size, $length in $--spacers-fix {
+        .#{$abbrev}#{$infix}-#{$size}-fix {
+          #{$prop}: $length;
+        }
+        .#{$abbrev}t#{$infix}-#{$size}-fix,
+        .#{$abbrev}y#{$infix}-#{$size}-fix {
+          #{$prop}-top: $length;
+        }
+        .#{$abbrev}r#{$infix}-#{$size}-fix,
+        .#{$abbrev}x#{$infix}-#{$size}-fix {
+          #{$prop}-right: $length;
+        }
+        .#{$abbrev}b#{$infix}-#{$size}-fix,
+        .#{$abbrev}y#{$infix}-#{$size}-fix {
+          #{$prop}-bottom: $length;
+        }
+        .#{$abbrev}l#{$infix}-#{$size}-fix,
+        .#{$abbrev}x#{$infix}-#{$size}-fix {
+          #{$prop}-left: $length;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Shadows
+ */
+.tk-box-shadow-1 {
+  box-shadow: $--box-shadow-1;
+}
+.tk-box-shadow-2 {
+  box-shadow: $--box-shadow-2;
+}
+.tk-box-shadow-3 {
+  box-shadow: $--box-shadow-3;
+}
+.tk-box-shadow-4 {
+  box-shadow: $--box-shadow-4;
+}
+
+/**
+ * Shadows
+ */
+.tk-border-radius-1 {
+  border-radius: $--border-radius-1;
+}
+.tk-border-radius-2 {
+  border-radius: $--border-radius-2;
+}
+.tk-border-radius-3 {
+  border-radius: $--border-radius-3;
+}
+.tk-border-radius-h {
+  border-radius: $--border-radius-h;
+}
+
+/**
+ * Text Colors
+ */
+.tk-text-primary {
+  color: $--color-primary;
+}
+.tk-text-secondary {
+  color: $--color-secondary;
+}
+.tk-text-black,
+.tk-text-black-1 {
+  color: $--color-black;
+}
+.tk-text-black-2 {
+  color: $--color-black-2;
+}
+.tk-text-black-3 {
+  color: $--color-black-3;
+}
+.tk-text-white {
+  color: $--color-white;
+}
+.tk-text-navy {
+  color: $--color-navy;
+}
+
+/**
+ * Background Colors
+ */
+.tk-bg-primary {
+  background-color: $--color-primary;
+}
+.tk-bg-secondary {
+  background-color: $--color-secondary;
+}
+.tk-bg-black {
+  background-color: $--color-black;
+}
+.tk-bg-light-black {
+  background-color: $--color-light-black;
+}
+.tk-bg-black-1 {
+  background-color: $--color-black-1;
+}
+.tk-bg-black-2 {
+  background-color: $--color-black-2;
+}
+.tk-bg-black-3 {
+  background-color: $--color-black-3;
+}
+.tk-bg-white {
+  background-color: $--color-white;
+}
+.tk-bg-grey,
+.tk-bg-grey-1 {
+  background-color: $--color-grey;
+}
+.tk-bg-grey-2 {
+  background-color: $--color-grey-2;
+}
+.tk-bg-grey-3 {
+  background-color: $--color-grey-3;
+}
+.tk-bg-grey-4 {
+  background-color: $--color-grey-4;
+}
+.tk-bg-grey-5 {
+  background-color: $--color-grey-5;
+}
+
+/**
+ * Fix pass image size
+ * TODO: wait for support in vue 3.0
+ */
+.img-fluid {
+  img {
+    @include img-fluid;
+  }
+}
+// Width and height
+@each $prop, $abbrev in (width: w, height: h) {
+  @each $size, $length in $sizes {
+    .#{$abbrev}-#{$size} {
+      img {
+        #{$prop}: $length !important;
+      }
+    }
+  }
+}
+.mw-100 {
+  img {
+    max-width: 100% !important;
+  }
+}
+.mh-100 {
+  img {
+    max-height: 100% !important;
+  }
+}
+
+// Viewport additional helpers
+.min-vw-100 {
+  img {
+    min-width: 100vw !important;
+  }
+}
+.min-vh-100 {
+  img {
+    min-height: 100vh !important;
+  }
+}
+.vw-100 {
+  img {
+    width: 100vw !important;
+  }
+}
+.vh-100 {
+  img {
+    height: 100vh !important;
+  }
+}

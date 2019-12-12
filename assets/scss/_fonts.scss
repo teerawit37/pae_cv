@@ -1,0 +1,119 @@
+/**
+ * Puimake v3.2.1
+ */
+@font-face {
+  font-family: 'puimake-bold';
+  src: url('../fonts/puimake/db-puimake-now-bd.eot');
+  src: url('../fonts/puimake/db-puimake-now-bd.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/puimake/db-puimake-now-bd.woff2') format('woff2'),
+    url('../fonts/puimake/db-puimake-now-bd.woff') format('woff'),
+    url('../fonts/puimake/db-puimake-now-bd.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'puimake-light';
+  src: url('../fonts/puimake/db-puimake-now-li.eot');
+  src: url('../fonts/puimake/db-puimake-now-li.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/puimake/db-puimake-now-li.woff2') format('woff2'),
+    url('../fonts/puimake/db-puimake-now-li.woff') format('woff'),
+    url('../fonts/puimake/db-puimake-now-li.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'puimake-medium';
+  src: url('../fonts/puimake/db-puimake-now-med.eot');
+  src: url('../fonts/puimake/db-puimake-now-med.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/puimake/db-puimake-now-med.woff2') format('woff2'),
+    url('../fonts/puimake/db-puimake-now-med.woff') format('woff'),
+    url('../fonts/puimake/db-puimake-now-med.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'puimake-regular';
+  src: url('../fonts/puimake/db-puimake-now.eot');
+  src: url('../fonts/puimake/db-puimake-now.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/puimake/db-puimake-now.woff2') format('woff2'),
+    url('../fonts/puimake/db-puimake-now.woff') format('woff'),
+    url('../fonts/puimake/db-puimake-now.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/**
+ * Udomsuk
+ */
+@font-face {
+  font-family: 'udomsuk-bold';
+  src: url('../fonts/udomsuk/udomsuk-medium.eot');
+  src: url('../fonts/udomsuk/udomsuk-medium.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/udomsuk/udomsuk-medium.woff2') format('woff2'),
+    url('../fonts/udomsuk/udomsuk-medium.woff') format('woff'),
+    url('../fonts/udomsuk/udomsuk-medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+/* @font-face {
+  font-family: 'udomsuk-light';
+  src: url('../fonts/udomsuk/udomsuk-light.eot');
+  src: url('../fonts/udomsuk/udomsuk-light.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/udomsuk/udomsuk-light.woff2') format('woff2'),
+    url('../fonts/udomsuk/udomsuk-light.woff') format('woff'),
+    url('../fonts/udomsuk/udomsuk-light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; 
+}*/
+@font-face {
+  font-family: 'udomsuk-medium';
+  src: url('../fonts/udomsuk/udomsuk-regular.eot');
+  src: url('../fonts/udomsuk/udomsuk-regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/udomsuk/udomsuk-regular.woff2') format('woff2'),
+    url('../fonts/udomsuk/udomsuk-regular.woff') format('woff'),
+    url('../fonts/udomsuk/udomsuk-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'udomsuk-regular';
+  src: url('../fonts/udomsuk/udomsuk-light.eot');
+  src: url('../fonts/udomsuk/udomsuk-light.eot?#iefix')
+      format('embedded-opentype'),
+    url('../fonts/udomsuk/udomsuk-light.woff2') format('woff2'),
+    url('../fonts/udomsuk/udomsuk-light.woff') format('woff'),
+    url('../fonts/udomsuk/udomsuk-light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/**
+ * Icons
+ */
+@font-face {
+  font-family: 'tk-icons';
+  src: url('../fonts/tk-icons/tk-icons.eot');
+  src: url('../fonts/tk-icons/tk-icons.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/tk-icons/tk-icons.woff2') format('woff2'),
+    url('../fonts/tk-icons/tk-icons.woff') format('woff'),
+    url('../fonts/tk-icons/tk-icons.ttf') format('truetype'),
+    url('../fonts/tk-icons/tk-icons.svg#tk-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}

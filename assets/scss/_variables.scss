@@ -1,0 +1,170 @@
+@import '~bootstrap/scss/variables';
+
+/**
+ * BEM
+ */
+$--bem-namespace: 'tk';
+$--bem-element-separator: '__';
+$--bem-modifier-separator: '--';
+$--bem-state-prefix: 'is-';
+
+/**
+ * Colors
+ */
+$--color-cyan: #09c8ba;
+$--color-cyan-dark: #07a095;
+$--color-coral: #f86b70;
+$--color-coral-dark: #c65559;
+$--color-navy: #024469;
+$--color-white: #ffffff;
+$--color-black: #37414b;
+$--color-light-black: #6a757e;
+$--color-black-1: #1c2835;
+$--color-black-2: #45525e;
+$--color-black-3: #6e7881;
+$--color-blue: #007abd;
+$--color-red: #d40108;
+$--color-green: #4ec278;
+$--color-yellow: #f1ba1b;
+$--color-grey: #b7c1cc;
+$--color-grey-1: $--color-grey;
+$--color-grey-2: #cdd8e2;
+$--color-grey-3: #e1e5eb;
+$--color-grey-4: #f5f9fd;
+$--color-grey-5: #f0f4f9;
+$--color-sky-a: #0cc3bc;
+$--color-sky-b: #1aa9c4;
+$--color-sun-a: #fca66d;
+$--color-sun-b: #f97770;
+$--color-wind-a: #156d9e;
+$--color-wind-b: #064c73;
+$--color-land-a: #8ed18f;
+$--color-land-b: #23cab2;
+$--color-cerulean: #007abd;
+
+// Provider
+$--color-line: #00b902;
+$--color-facebook: #1875f1;
+
+$--color-primary: $--color-cyan;
+$--color-secondary: $--color-coral;
+
+$--color-cta-a: $--color-coral;
+$--color-cta-b: #e85459;
+
+$--color-btn-primary: $--color-coral;
+$--color-btn-primary-dark: $--color-coral-dark;
+$--color-btn-secondary: $--color-cyan;
+$--color-btn-secondary-dark: $--color-cyan-dark;
+
+/**
+ * Font Sizes
+ */
+$--font-size-base: 16px;
+$--font-size-base-desktop: 20px;
+$--font-size-base-mobile: $--font-size-base;
+
+$--font-size-h1: 2rem;
+$--font-size-h2: 1.75rem;
+$--font-size-h3: 1.5rem;
+$--font-size-h4: 1.25rem;
+$--font-size-h5: 1.125rem;
+$--font-size-h6: 1rem;
+
+$--font-size-b1: $--font-size-base;
+$--font-size-b2: $--font-size-b1 - 2px;
+$--font-size-b3: $--font-size-b2 - 2px;
+
+/**
+ * Spacing
+ */
+$spacers: (
+  0: 0,
+  1: (
+    $spacer * 0.25
+  ),
+  2: (
+    $spacer * 0.5
+  ),
+  3: $spacer,
+  4: (
+    $spacer * 1.5
+  ),
+  5: (
+    $spacer * 2
+  ),
+  6: (
+    $spacer * 2.5
+  ),
+  7: (
+    $spacer * 3
+  ),
+  8: (
+    $spacer * 3.5
+  ),
+  9: (
+    $spacer * 4
+  ),
+  10: (
+    $spacer * 4.5
+  )
+);
+
+$--spacers-fix: (
+  0: 0px,
+  1: 4px,
+  2: 8px,
+  3: 16px,
+  4: 24px,
+  5: 32px,
+  6: 40px,
+  7: 48px,
+  8: 56px,
+  9: 64px,
+  10: 72px
+);
+
+/**
+ * Grid Gutter
+ */
+$grid-gutter-width: 16px;
+$--grid-gutters: (0, 4, 8, 16);
+
+/**
+ * Breakpoints
+ */
+$grid-breakpoints: (
+  ss: 0,
+  xs: 320px,
+  sm: 375px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1440px
+);
+
+$container-max-widths: (
+  sm: 540px - $grid-gutter-width,
+  md: 768px - $grid-gutter-width,
+  lg: 992px,
+  xl: 1076px
+);
+
+/**
+ * Box Shadows
+ */
+$--box-shadow-1: 0 4px 12px 0 rgba(1, 27, 42, 0.14);
+$--box-shadow-2: 0 2px 10px 0 rgba(1, 27, 42, 0.12);
+$--box-shadow-3: 0 2px 8px 0 rgba(1, 27, 42, 0.1);
+$--box-shadow-4: 0 1px 6px 0 rgba(1, 27, 42, 0.1);
+
+/**
+ * Border Radius
+ */
+$--border-radius-1: 4px;
+$--border-radius-2: 8px;
+$--border-radius-3: 16px;
+$--border-radius-h: 50%;
+
+/**
+ * fontawesome
+ */

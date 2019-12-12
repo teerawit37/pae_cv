@@ -1,0 +1,99 @@
+html {
+  @include block(toast) {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 10000;
+    min-width: unset;
+    @include media-breakpoint-down(sm) {
+      left: 8px !important;
+      right: 8px !important;
+      bottom: 8px !important;
+    }
+    @include media-breakpoint-up(sm) {
+      left: 16px !important;
+      right: 16px !important;
+      bottom: 16px !important;
+    }
+    @include media-breakpoint-up(md) {
+      left: 5% !important;
+      right: auto !important;
+      bottom: 7% !important;
+      max-width: 90vw;
+    }
+    @include element(item) {
+      top: 35px;
+      width: auto;
+      clear: both;
+      margin-top: 8px;
+      position: relative;
+      max-width: 100%;
+      height: auto;
+      word-break: normal;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: inherit;
+      float: none;
+
+      //theme
+      border-radius: 4px !important;
+      min-height: unset;
+      line-height: 24px;
+      background-color: $--color-black-2 !important;
+      padding: 16px 16px;
+      font-size: 16px;
+      font-family: 'udomsuk-regular';
+      color: $--color-white;
+      box-shadow: $--box-shadow-3;
+      & > i {
+        margin: 0 16px 0 0;
+        font-size: 24px;
+        height: 24px;
+      }
+      &.success > i {
+        color: $--color-green;
+      }
+      &.error > i {
+        color: $--color-red;
+      }
+
+      .action {
+        color: #fff;
+        align-self: start;
+        &:first-child {
+          margin-left: auto !important;
+        }
+        &:hover {
+          text-decoration: none;
+        }
+        &:not(.icon) {
+          padding: 0 12px;
+          height: 32px;
+          line-height: 30px;
+          border-radius: 8px;
+          border: solid 1px $--color-white;
+          background-color: rgba($--color-black-1, 0);
+          font-size: 14px;
+          margin: 0 0 0 16px;
+          white-space: nowrap;
+          &:hover {
+            background-color: rgba($--color-black-1, 0.4);
+          }
+          &:active {
+            background-color: rgba($--color-black-1, 0.6);
+          }
+        }
+        &.icon {
+          margin: 0 0 0 16px;
+          font-size: 16px;
+          padding: 8px;
+          line-height: 12px;
+          i {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

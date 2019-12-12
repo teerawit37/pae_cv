@@ -104,9 +104,10 @@
 
 <script>
 import { Timeline, TimelineItem } from 'element-ui'
+import SlideShowcase from '~/components/SlideShowcase.vue'
 export default {
   components: {
-    SlideShowcase: () => import('~/components/SlideShowcase'),
+    SlideShowcase,
     [Timeline.name]: Timeline,
     [TimelineItem.name]: TimelineItem,
   },
